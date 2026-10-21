@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090806">
+  <meta name="description" content="عصّف — متجر خدمات وكوينز FC 27">
+  <title>39F | متجر عصّف FC 27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#070706;--panel:#11100d;--panel2:#17150f;--gold:#f6b91d;--gold2:#ffda65;--white:#f7f5ef;--muted:#aaa69b;--line:rgba(246,185,29,.22);--green:#54e0a0}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--white);font-family:"Cairo",Tahoma,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+    .ambient{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,#35240a 0,transparent 42%),linear-gradient(145deg,#080806,#030303 70%)}
+    .ambient:before,.ambient:after{content:"";position:absolute;inset:-30%;background:repeating-linear-gradient(125deg,transparent 0 110px,rgba(255,190,34,.055) 111px,transparent 113px 220px);animation:drift 24s linear infinite;transform:rotate(-8deg)}
+    .ambient:after{background-image:radial-gradient(circle,rgba(255,191,44,.6) 1px,transparent 1.8px);background-size:23px 23px;opacity:.15;animation:float 18s ease-in-out infinite}
+    .orb{position:absolute;width:55vw;height:55vw;border:1px solid rgba(255,191,44,.13);border-radius:50%;top:10%;left:-15%;box-shadow:0 0 80px rgba(255,183,20,.05),inset 0 0 70px rgba(255,183,20,.025);animation:orbit 28s linear infinite}
+    @keyframes drift{to{background-position:500px 0}}@keyframes float{50%{transform:translate(22px,-30px)}}@keyframes orbit{to{transform:rotate(360deg)}}
+    .wrap{width:min(1180px,92%);margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(7,7,6,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(246,185,29,.14)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:24px;letter-spacing:.3px}
+    .brand img{width:52px;height:52px;object-fit:cover;border-radius:50%;border:1px solid #d99e17;box-shadow:0 0 20px #f6b91d2c}
+    .brand span{color:var(--gold)}
+    .links{display:flex;align-items:center;gap:22px;color:#d8d2c5;font-size:13px}
+    .links a{transition:.25s}.links a:hover{color:var(--gold);transform:translateY(-2px)}
+    .btn{border:1px solid var(--gold);border-radius:12px;padding:11px 18px;background:linear-gradient(135deg,#ffd86b,#e6a40c);color:#171106;font-weight:900;box-shadow:0 8px 24px #f6b91d18;transition:transform .25s,box-shadow .25s}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px #f6b91d3b}
+    .btn.ghost{background:transparent;color:var(--gold);box-shadow:none}
+    .menu-btn{display:none;background:transparent;color:var(--gold);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+    .hero{padding:80px 0 58px;min-height:600px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold2);border:1px solid var(--line);background:#f6b91d0b;border-radius:30px;padding:7px 14px;font-size:12px;font-weight:800}
+    .pulse{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}
+    h1{font-size:clamp(42px,6vw,76px);line-height:1.22;margin:20px 0 18px;font-weight:900;letter-spacing:-1.8px}
+    h1 em{font-style:normal;color:var(--gold);text-shadow:0 0 35px #f6b91d35}
+    .hero p{color:#bdb8ac;max-width:610px;line-height:2;font-size:16px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+    .trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;color:#bcb7ab;font-size:12px}
+    .trust span{display:flex;align-items:center;gap:7px}.check{color:var(--gold);font-size:16px}
+    .logo-stage{position:relative;display:grid;place-items:center;min-height:410px}
+    .logo-ring{position:absolute;width:min(390px,80vw);aspect-ratio:1;border-radius:50%;border:1px solid #f6b91d77;box-shadow:0 0 50px #f6b91d14,inset 0 0 55px #f6b91d0d;animation:orbit 40s linear infinite}
+    .logo-ring:before,.logo-ring:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold);top:10%;right:18%}
+    .logo-ring:after{top:auto;right:auto;bottom:15%;left:9%}
+    .logo-card{position:relative;width:min(330px,75vw);aspect-ratio:1;border-radius:28px;overflow:hidden;border:1px solid #f6b91d6b;box-shadow:0 30px 90px #000,0 0 65px #f6b91d14;transform:rotate(-3deg);transition:.5s}
+    .logo-card:hover{transform:rotate(0) scale(1.035)}.logo-card img{width:100%;height:100%;object-fit:cover}
+    .float-tag{position:absolute;background:#12100bdf;border:1px solid var(--line);border-radius:13px;padding:12px 15px;box-shadow:0 15px 40px #0008;backdrop-filter:blur(10px);font-size:12px;animation:bob 4s ease-in-out infinite}
+    .float-tag strong{display:block;color:var(--gold);font-size:15px}.tag-one{top:13%;right:-1%}.tag-two{bottom:12%;left:-1%;animation-delay:-2s}
+    @keyframes bob{50%{transform:translateY(-10px)}}
+    .ticker{border-block:1px solid #f6b91d19;background:#f6b91d08;overflow:hidden;white-space:nowrap;padding:13px 0;color:#d4c8a7;font-size:12px}
+    .ticker-track{display:inline-block;animation:marquee 28s linear infinite}.ticker b{color:var(--gold);margin:0 26px}@keyframes marquee{to{transform:translateX(-50%)}}
+    section{padding:70px 0}.section-head{text-align:center;margin:0 auto 35px;max-width:680px}.kicker{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1px}.section-head h2{font-size:clamp(28px,4vw,42px);margin:8px 0 10px}.section-head p{color:var(--muted);line-height:1.9;margin:0;font-size:14px}
+    .platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .platform{position:relative;text-align:right;padding:24px;border:1px solid var(--line);background:linear-gradient(145deg,#17150fdd,#0c0b09ed);border-radius:20px;overflow:hidden;transition:.3s;transform-style:preserve-3d}
+    .platform:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:#f6b91d12;filter:blur(35px);top:-100px;left:-50px;transition:.4s}
+    .platform:hover{border-color:#f6b91d99;transform:translateY(-7px);box-shadow:0 18px 45px #0008}.platform:hover:after{transform:scale(1.7)}
+    .platform-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}.platform-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:#f6b91d12;color:var(--gold);border:1px solid var(--line);font-size:23px}
+    .platform h3{margin:20px 0 5px;font-size:22px}.platform p{color:var(--muted);font-size:12px;margin:0 0 20px}
+    .coin-list{display:grid;gap:9px}.coin-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;border:1px solid #ffffff0c;background:#ffffff04;border-radius:11px;transition:.22s}.coin-row:hover{background:#f6b91d0d;border-color:#f6b91d55;transform:translateX(-4px)}
+    .coin-name{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:800}.coin{color:var(--gold);font-size:17px}.price{color:var(--gold2);font-weight:900;font-size:14px;white-space:nowrap}.price small{color:#a8a091;font-size:10px;font-weight:500}
+    .buy{background:#f6b91d14;border:1px solid #f6b91d48;border-radius:8px;padding:5px 10px;color:var(--gold);font-size:11px;font-weight:800;transition:.2s}.buy:hover{background:var(--gold);color:#100c04}
+    .note{font-size:11px;color:#8f8878;text-align:center;margin-top:18px}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .service{background:linear-gradient(145deg,#17150f,#0d0c09);border:1px solid #ffffff12;border-radius:19px;padding:24px;transition:.3s;position:relative;overflow:hidden}
+    .service:hover{transform:translateY(-6px);border-color:#f6b91d70;box-shadow:0 18px 40px #0008}
+    .service .icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:#f6b91d13;border:1px solid var(--line);font-size:25px;margin-bottom:17px}
+    .service h3{margin:0 0 8px;font-size:20px}.service p{font-size:12px;line-height:1.9;color:var(--muted);min-height:48px}
+    .service-price{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ffffff12;padding-top:14px;margin-top:17px}.service-price strong{font-size:21px;color:var(--gold)}.service-price span{font-size:11px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .player-card{min-height:230px;border-radius:17px;padding:15px;position:relative;overflow:hidden;background:linear-gradient(150deg,#3c2c0d,#15110a 52%,#080807);border:1px solid #f6b91d65;transition:.35s}
+    .player-card:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 20px 35px #0009}
+    .player-card:before{content:"";position:absolute;inset:0;background:linear-gradient(130deg,#ffda6533,transparent 45%),repeating-linear-gradient(135deg,transparent 0 22px,#fff05 23px,transparent 24px 44px)}
+    .card-top{position:relative;display:flex;justify-content:space-between;color:#ffdc75;font-size:11px;font-weight:900}.rating{font-size:32px;line-height:1}
+    .player-silhouette{position:relative;text-align:center;font-size:67px;filter:drop-shadow(0 5px 10px #000);margin:8px 0 3px}
+    .player-card h4{position:relative;margin:0;text-align:center;font-size:15px}.player-card p{position:relative;text-align:center;font-size:10px;color:#dfc98c;margin:4px 0}
+    .stats{position:relative;display:flex;justify-content:center;gap:13px;font-size:10px;color:#f9e9bc}
+    .tasks{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .task{border:1px solid #ffffff14;background:#11100d;border-radius:18px;padding:23px;transition:.3s}.task:hover{border-color:#f6b91d70;transform:translateY(-5px)}
+    .task .task-icon{font-size:26px}.task h3{margin:13px 0 6px}.task p{color:var(--muted);font-size:12px;line-height:1.9}
+    .task .tag{display:inline-block;color:var(--gold);font-size:11px;border:1px solid var(--line);border-radius:20px;padding:4px 10px;margin-top:5px}
+    .guarantee{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:stretch}
+    .gold-panel{padding:30px;border:1px solid #f6b91d55;border-radius:22px;background:radial-gradient(circle at top left,#60430f70,transparent 55%),#11100c;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .shield{width:80px;height:90px;display:grid;place-items:center;font-size:38px;color:var(--gold);clip-path:polygon(50% 0,94% 17%,86% 70%,50% 100%,14% 70%,6% 17%);border:0;background:linear-gradient(145deg,#f9d46a55,#f6b91d18);margin-bottom:14px}
+    .gold-panel h3{font-size:25px;margin:0}.gold-panel p{color:var(--muted);font-size:12px;line-height:1.9}
+    .terms{display:grid;grid-template-columns:1fr 1fr;gap:13px}.term{padding:20px;border-radius:15px;background:#11100d;border:1px solid #ffffff12}.term h4{margin:0 0 8px;color:var(--gold);font-size:14px}.term p{margin:0;color:var(--muted);font-size:12px;line-height:1.9}
+    .contact-box{border:1px solid #f6b91d45;border-radius:22px;background:linear-gradient(110deg,#211906,#0d0c09 65%);padding:32px;display:flex;align-items:center;justify-content:space-between;gap:25px}.contact-box h2{margin:0 0 8px;font-size:28px}.contact-box p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+    footer{border-top:1px solid #f6b91d19;padding:25px 0;color:#928b7d;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}.footer-brand{color:var(--gold);font-size:16px;font-weight:900}
+    .toast{position:fixed;bottom:22px;left:22px;background:#18150d;border:1px solid var(--gold);color:#fff3d1;border-radius:12px;padding:13px 17px;z-index:100;box-shadow:0 10px 30px #0008;transform:translateY(120px);opacity:0;transition:.3s;font-size:12px}.toast.show{transform:translateY(0);opacity:1}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:850px){.links{display:none;position:absolute;top:78px;right:0;left:0;background:#090806f7;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu-btn{display:block}.nav>.btn{display:none}.hero{grid-template-columns:1fr;padding-top:50px;text-align:center}.hero p{margin:auto}.hero-actions,.trust{justify-content:center}.logo-stage{min-height:350px}.tag-one{right:4%}.tag-two{left:4%}.platforms{grid-template-columns:1fr}.service-grid,.tasks{grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(2,1fr)}.guarantee{grid-template-columns:1fr}.contact-box{align-items:flex-start;flex-direction:column}}
+    @media(max-width:520px){.hero{padding-top:38px}.hero h1{font-size:43px}.logo-stage{min-height:310px}.logo-card{width:250px}.logo-ring{width:290px}.service-grid,.tasks{grid-template-columns:1fr}.terms{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.player-card{min-height:205px;padding:12px}.player-silhouette{font-size:53px}.contact-box{padding:23px}.contact-box h2{font-size:23px}.brand{font-size:21px}}
+
+    .cart-fab{position:fixed;z-index:80;bottom:22px;right:22px;background:linear-gradient(135deg,#d5ad52,#f5df9c);color:#15110a;border:0;border-radius:999px;padding:13px 18px;font-weight:900;box-shadow:0 8px 30px #0008;cursor:pointer;display:flex;gap:9px;align-items:center}.cart-fab b{background:#17130b;color:#f5df9c;border-radius:50%;min-width:23px;height:23px;display:grid;place-items:center;font-size:12px}
+    .checkout-overlay{position:fixed;inset:0;z-index:120;background:#000b;backdrop-filter:blur(8px);display:none;justify-content:flex-end}.checkout-overlay.open{display:flex}.checkout-panel{width:min(520px,100%);height:100%;overflow:auto;background:#0d0c09;border-left:1px solid #b9984a;padding:30px 24px 40px;position:relative;box-shadow:-20px 0 70px #0008}.checkout-panel h2{font-size:28px;margin:7px 0 22px}.close-checkout{position:absolute;top:17px;left:18px;background:#211d14;color:#f8e9bf;border:1px solid #54472c;border-radius:50%;width:38px;height:38px;font-size:25px;cursor:pointer}.cart-items{display:grid;gap:10px}.cart-line{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border:1px solid #30291b;border-radius:13px;padding:13px;background:#14120d}.cart-line strong{font-size:14px}.cart-line small{display:block;color:#a8a093;margin-top:5px}.cart-controls{display:flex;gap:6px;align-items:center;margin-top:8px}.cart-controls button{border:1px solid #4d4128;background:#201b10;color:#f1d58b;border-radius:7px;padding:3px 9px;cursor:pointer}.cart-line-price{white-space:nowrap;color:#e9cb7a;font-weight:900}.empty-cart{color:#b9b1a1;border:1px dashed #403623;border-radius:12px;padding:20px;text-align:center}.cart-total{display:flex;justify-content:space-between;border-top:1px solid #403623;margin:18px 0;padding:16px 0;font-weight:800}.cart-total strong{font-size:23px;color:#f0d17d}.checkout-form{display:grid;gap:13px}.checkout-form label{display:grid;gap:7px;color:#ded4bf;font-size:13px}.checkout-form input,.checkout-form select{width:100%;background:#17150f;color:#f7f1e4;border:1px solid #403724;border-radius:10px;padding:12px;outline:none}.checkout-form input:focus,.checkout-form select:focus{border-color:#d2ad57}.payment-note,.form-message,.checkout-disclaimer{color:#a9a092;font-size:12px;line-height:1.8}.checkout-submit{width:100%;justify-content:center;margin-top:4px}.checkout-submit:disabled{opacity:.55;cursor:wait}.bank-details{border:1px solid #76602e;border-radius:13px;padding:17px;margin-top:15px;background:#17140c}.bank-details h3{margin:0 0 7px;color:#f1d58b}.bank-details p{font-size:13px;line-height:1.8;color:#c9c0af}.bank-details .btn{margin-top:8px}.checkout-disclaimer{display:block;margin-top:18px}
+  </style>
+</head>
+<body>
+  <div class="ambient"><div class="orb"></div></div>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home"><img src="assets/39f-logo.jpeg" alt="شعار عصّف"><span>39F</span></a>
+      <nav class="links" id="navLinks">
+        <a href="#coins">الكوينز</a><a href="#rivals">الرايفلز</a><a href="#champions">الفوت تشامبيون</a><a href="#challenges">التحديات</a><a href="#guarantee">الضمان والسياسات</a><a href="#contact">تواصل معنا</a>
+      </nav>
+      <a class="btn" href="#coins">تصفح الخدمات ↙</a>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse"></span> 39F STORE • FC 27</div>
+        <h1>ارتقِ بفريقك.<br><em>خلّ الباقي علينا.</em></h1>
+        <p>كوينز وخدمات لعب تنافسية بتجربة مرتبة وواضحة. اختر منصتك، حدّد الخدمة المناسبة، وأضف خدماتك للسلة وأكمل الطلب بالطريقة المناسبة لك.</p>
+        <div class="hero-actions"><a class="btn" href="#coins">🪙 أسعار الكوينز</a><a class="btn ghost" href="#services">استكشف الخدمات ←</a></div>
+        <div class="trust"><span><b class="check">✦</b> أسعار واضحة</span><span><b class="check">✦</b> تواصل مباشر</span><span><b class="check">✦</b> ضمان حسب الشروط</span></div>
+      </div>
+      <div class="logo-stage reveal">
+        <div class="logo-ring"></div><div class="logo-card"><img src="assets/39f-logo.jpeg" alt="شعار عصّف بالأسود والذهبي والفضي"></div>
+        <div class="float-tag tag-one"><strong>39F</strong>خدمات FC 27</div>
+        <div class="float-tag tag-two"><strong>ذهبي × فضي</strong>هوية المتجر</div>
+      </div>
+    </section>
+    <div class="ticker"><div class="ticker-track">🪙 كوينز لجميع المنصات <b>✦</b> رانكات الرايفلز <b>✦</b> فوت تشامبيون <b>✦</b> مهام وتحديات <b>✦</b> الضمان الذهبي <b>✦</b> كوينز لجميع المنصات <b>✦</b> رانكات الرايفلز <b>✦</b> فوت تشامبيون <b>✦</b> مهام وتحديات <b>✦</b> الضمان الذهبي <b>✦</b></div></div>
+
+    <section id="coins">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">COINS MARKET</div><h2>اختر منصتك للكوينز</h2><p>الأسعار أدناه نموذج مبدئي قابل للتعديل من ملف الموقع. الأسعار الحالية تجريبية ويمكن تعديلها من ملف catalog.json قبل الإطلاق.</p></div>
+        <div class="platforms">
+          <article class="platform reveal">
+            <div class="platform-top"><div class="platform-icon">▣</div><span class="eyebrow">PC • ستيم / EA app</span></div>
+            <h3>كوينز الكمبيوتر</h3><p>أسعار الكمبيوتر أعلى في هذا النموذج التجريبي.</p>
+            <div class="coin-list">
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>100,000 كوينز</span><span class="price">25 ر.س</span><button class="buy" data-order="100 ألف كوينز — PC — 25 ر.س" data-sku="100 ألف كوينز — PC — 25 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>250,000 كوينز</span><span class="price">55 ر.س</span><button class="buy" data-order="250 ألف كوينز — PC — 55 ر.س" data-sku="250 ألف كوينز — PC — 55 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>500,000 كوينز</span><span class="price">100 ر.س</span><button class="buy" data-order="500 ألف كوينز — PC — 100 ر.س" data-sku="500 ألف كوينز — PC — 100 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>1,000,000 كوينز</span><span class="price">185 ر.س</span><button class="buy" data-order="مليون كوينز — PC — 185 ر.س" data-sku="مليون كوينز — PC — 185 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>2,000,000 كوينز</span><span class="price">350 ر.س</span><button class="buy" data-order="مليونين كوينز — PC — 350 ر.س" data-sku="مليونين كوينز — PC — 350 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>5,000,000 كوينز</span><span class="price">800 ر.س</span><button class="buy" data-order="5 مليون كوينز — PC — 800 ر.س" data-sku="5 مليون كوينز — PC — 800 ر.س">اطلب</button></div>
+            </div>
+          </article>
+          <article class="platform reveal">
+            <div class="platform-top"><div class="platform-icon">◉</div><span class="eyebrow">PS4 / PS5</span></div>
+            <h3>كوينز بلايستيشن</h3><p>اختر الكمية المناسبة لفريقك وأضفها للسلة.</p>
+            <div class="coin-list">
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>100,000 كوينز</span><span class="price">18 ر.س</span><button class="buy" data-order="100 ألف كوينز — PlayStation — 18 ر.س" data-sku="100 ألف كوينز — PlayStation — 18 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>250,000 كوينز</span><span class="price">40 ر.س</span><button class="buy" data-order="250 ألف كوينز — PlayStation — 40 ر.س" data-sku="250 ألف كوينز — PlayStation — 40 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>500,000 كوينز</span><span class="price">75 ر.س</span><button class="buy" data-order="500 ألف كوينز — PlayStation — 75 ر.س" data-sku="500 ألف كوينز — PlayStation — 75 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>1,000,000 كوينز</span><span class="price">140 ر.س</span><button class="buy" data-order="مليون كوينز — PlayStation — 140 ر.س" data-sku="مليون كوينز — PlayStation — 140 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>2,000,000 كوينز</span><span class="price">260 ر.س</span><button class="buy" data-order="مليونين كوينز — PlayStation — 260 ر.س" data-sku="مليونين كوينز — PlayStation — 260 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>5,000,000 كوينز</span><span class="price">600 ر.س</span><button class="buy" data-order="5 مليون كوينز — PlayStation — 600 ر.س" data-sku="5 مليون كوينز — PlayStation — 600 ر.س">اطلب</button></div>
+            </div>
+          </article>
+          <article class="platform reveal">
+            <div class="platform-top"><div class="platform-icon">✕</div><span class="eyebrow">Xbox</span></div>
+            <h3>كوينز إكس بوكس</h3><p>الأسعار المعروضة تجريبية وقابلة للتغيير.</p>
+            <div class="coin-list">
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>100,000 كوينز</span><span class="price">18 ر.س</span><button class="buy" data-order="100 ألف كوينز — Xbox — 18 ر.س" data-sku="100 ألف كوينز — Xbox — 18 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>250,000 كوينز</span><span class="price">40 ر.س</span><button class="buy" data-order="250 ألف كوينز — Xbox — 40 ر.س" data-sku="250 ألف كوينز — Xbox — 40 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>500,000 كوينز</span><span class="price">75 ر.س</span><button class="buy" data-order="500 ألف كوينز — Xbox — 75 ر.س" data-sku="500 ألف كوينز — Xbox — 75 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>1,000,000 كوينز</span><span class="price">140 ر.س</span><button class="buy" data-order="مليون كوينز — Xbox — 140 ر.س" data-sku="مليون كوينز — Xbox — 140 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>2,000,000 كوينز</span><span class="price">260 ر.س</span><button class="buy" data-order="مليونين كوينز — Xbox — 260 ر.س" data-sku="مليونين كوينز — Xbox — 260 ر.س">اطلب</button></div>
+              <div class="coin-row"><span class="coin-name"><span class="coin">🪙</span>5,000,000 كوينز</span><span class="price">600 ر.س</span><button class="buy" data-order="5 مليون كوينز — Xbox — 600 ر.س" data-sku="5 مليون كوينز — Xbox — 600 ر.س">اطلب</button></div>
+            </div>
+          </article>
+        </div>
+        <p class="note">تنبيه: هذه أسعار توضيحية للتصميم وليست تسعيرة سوق مؤكدة. عدّلها قبل نشر الموقع، وتأكد من شروط اللعبة وسياسات المنصة.</p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">PLAY SERVICES</div><h2>خدمات اللعب</h2><p>خدمات منفصلة بتسعير واضح — اختر الخدمة وأكمل طلبك من سلة 39F.</p></div>
+        <div class="service-grid">
+          <article class="service reveal" id="rivals"><div class="icon">🏆</div><h3>Division Rivals</h3><p>نلعب الرايفلز للوصول إلى الرتبة المطلوبة. السعر النهائي يعتمد على القسم ونقطة البداية.</p><div class="coin-list">
+            <div class="coin-row"><span>Elite</span><span class="price">120 ر.س</span><button class="buy" data-order="خدمة Rivals Elite — 120 ر.س" data-sku="خدمة Rivals Elite — 120 ر.س">اطلب</button></div>
+            <div class="coin-row"><span>Division 1</span><span class="price">90 ر.س</span><button class="buy" data-order="خدمة Rivals Division 1 — 90 ر.س" data-sku="خدمة Rivals Division 1 — 90 ر.س">اطلب</button></div>
+            <div class="coin-row"><span>Division 2</span><span class="price">65 ر.س</span><button class="buy" data-order="خدمة Rivals Division 2 — 65 ر.س" data-sku="خدمة Rivals Division 2 — 65 ر.س">اطلب</button></div>
+          </div></article>
+          <article class="service reveal" id="champions"><div class="icon">🎖️</div><h3>FUT Champions</h3><p>خدمة لعب الفوت تشامبيون حسب عدد الانتصارات أو الرانك المتفق عليه مسبقًا.</p><div class="coin-list">
+            <div class="coin-row"><span>Rank 1</span><span class="price">180 ر.س</span><button class="buy" data-order="FUT Champions Rank 1 — 180 ر.س" data-sku="FUT Champions Rank 1 — 180 ر.س">اطلب</button></div>
+            <div class="coin-row"><span>Rank 2</span><span class="price">140 ر.س</span><button class="buy" data-order="FUT Champions Rank 2 — 140 ر.س" data-sku="FUT Champions Rank 2 — 140 ر.س">اطلب</button></div>
+            <div class="coin-row"><span>Rank 3</span><span class="price">100 ر.س</span><button class="buy" data-order="FUT Champions Rank 3 — 100 ر.س" data-sku="FUT Champions Rank 3 — 100 ر.س">اطلب</button></div>
+          </div></article>
+          <article class="service reveal"><div class="icon">⚡</div><h3>خدمة مخصصة</h3><p>عندك عدد انتصارات محدد أو قسم مختلف؟ أرسل تفاصيل حسابك والهدف المطلوب لتسعير الخدمة.</p><div class="service-price"><strong>حسب الطلب</strong><span>يحدد قبل البدء</span></div><button class="btn ghost order-custom" data-order="أرغب بطلب خدمة لعب مخصصة">استفسر الآن ←</button></article>
+        </div>
+        <p class="note">الأسعار أمثلة تجريبية. خدمات اللعب قد تتطلب مشاركة الوصول للحساب وقد تخالف شروط اللعبة؛ لا تشارك كلمة مرورك أو رموز التحقق إلا بعد فهم المخاطر والسياسات.</p>
+      </div>
+    </section>
+
+    <section id="challenges">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">SBC & OBJECTIVES</div><h2>التحديات والمهام</h2><p>قسم مستقل لتحديات بناء التشكيلة SBC والمهام الموسمية. البطاقات التالية نماذج تصميمية وليست بطاقات لاعبين حقيقية.</p></div>
+        <div class="cards">
+          <article class="player-card reveal"><div class="card-top"><span>SBC</span><span class="rating">91</span></div><div class="player-silhouette">👑</div><h4>تحدي لاعب مميز</h4><p>ICON • نموذج توضيحي</p><div class="stats"><span>PAC 88</span><span>SHO 91</span><span>PAS 89</span></div></article>
+          <article class="player-card reveal"><div class="card-top"><span>SBC</span><span class="rating">90</span></div><div class="player-silhouette">⚽</div><h4>تحدي لاعب الأسبوع</h4><p>TOTW • نموذج توضيحي</p><div class="stats"><span>PAC 90</span><span>SHO 88</span><span>DRI 91</span></div></article>
+          <article class="player-card reveal"><div class="card-top"><span>OBJECTIVE</span><span class="rating">XP</span></div><div class="player-silhouette">🎯</div><h4>مهام الموسم</h4><p>Season Progress</p><div class="stats"><span>خبرة</span><span>مكافآت</span><span>تقدم</span></div></article>
+          <article class="player-card reveal"><div class="card-top"><span>EVOLUTION</span><span class="rating">+</span></div><div class="player-silhouette">🚀</div><h4>تطوير اللاعبين</h4><p>Evolution • نموذج توضيحي</p><div class="stats"><span>تطوير</span><span>أهداف</span><span>مكافآت</span></div></article>
+        </div>
+        <div class="tasks" style="margin-top:18px">
+          <article class="task reveal"><div class="task-icon">🧩</div><h3>حل تحديات SBC</h3><p>تجهيز التشكيلات المطلوبة للتحدي باستخدام اللاعبين والميزانية المتاحة.</p><span class="tag">السعر حسب التحدي</span></article>
+          <article class="task reveal"><div class="task-icon">📋</div><h3>إنجاز المهام</h3><p>مساعدة في إنجاز أهداف محددة ومكافآت موسمية، بعد تأكيد شروط المهمة.</p><span class="tag">السعر حسب عدد المهام</span></article>
+          <a  <button class="cart-fab" id="cartOpen" aria-label="فتح سلة المشتريات">🛒 <span>السلة</span> <b id="cartCount">0</b></button>
+  <div class="checkout-overlay" id="checkoutOverlay" aria-hidden="true">
+    <section class="checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="close-checkout" id="checkoutClose" aria-label="إغلاق">×</button>
+      <div class="kicker">39F CHECKOUT</div><h2 id="checkoutTitle">سلة مشترياتك</h2>
+      <div id="cartItems" class="cart-items"><p class="empty-cart">السلة فارغة — أضف خدمة للبدء.</p></div>
+      <div class="cart-total"><span>الإجمالي</span><strong id="cartTotal">0 ر.س</strong></div>
+      <form id="checkoutForm" class="checkout-form">
+        <label>الاسم الكامل<input name="customerName" required minlength="2" maxlength="100" autocomplete="name" placeholder="اسمك" /></label>
+        <label>رقم الجوال<input name="customerPhone" required inputmode="tel" pattern="[0-9+ ]{9,16}" maxlength="16" autocomplete="tel" placeholder="05xxxxxxxx" /></label>
+        <label>البريد الإلكتروني (اختياري)<input name="customerEmail" type="email" maxlength="150" autocomplete="email" placeholder="name@example.com" /></label>
+        <label>طريقة الدفع<select name="paymentMethod" id="paymentMethod" required><option value="paylink">دفع إلكتروني — مدى / Apple Pay / البطاقات*</option><option value="bank_transfer">تحويل بنكي</option></select></label>
+        <p class="payment-note" id="paymentNote">*تظهر وسائل الدفع المتاحة حسب تفعيل حساب التاجر لدى بوابة الدفع.</p>
+        <button class="btn checkout-submit" id="checkoutSubmit" type="submit">تأكيد الطلب والمتابعة للدفع</button>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+      <div id="bankDetails" class="bank-details" hidden><h3>تعليمات التحويل البنكي</h3><p>سيظهر رقم الطلب بعد إتمام الطلب. أضف بيانات حساب المتجر البنكية في إعدادات الخادم قبل إطلاق المتجر، ثم أرسل إثبات التحويل إلى واتساب المتجر.</p><a class="btn ghost" href="https://wa.me/966583296424" target="_blank" rel="noopener">إرسال إثبات التحويل عبر واتساب</a></div>
+      <small class="checkout-disclaimer">بعض خدمات العملات أو اللعب قد تخالف شروط اللعبة أو المنصة. تأكد من الشروط قبل إتمام الشراء.</small>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+    const STORE = { whatsapp: "966583296424", twitter: "https://x.com/1g_s" };
+    const toast = document.getElementById('toast'); let toastTimer;
+    function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3200)}
+    const overlay=document.getElementById('checkoutOverlay'),cartItemsEl=document.getElementById('cartItems'),cartCountEl=document.getElementById('cartCount'),cartTotalEl=document.getElementById('cartTotal');
+    let cart=[];
+    const money=n=>new Intl.NumberFormat('ar-SA',{maximumFractionDigits:2}).format(n)+' ر.س';
+    function parseOrder(button){const text=button.dataset.order||'';const match=text.match(/([\d,]+)\s*ر\.س/);return {id:button.dataset.sku||text,name:text.replace(/\s*[—-]\s*[\d,]+\s*ر\.س\s*$/,'').trim(),price:match?Number(match[1].replace(/,/g,'')):null};}
+    function addToCart(button){const item=parseOrder(button);if(!item.price){showToast('هذه خدمة مخصصة؛ تواصل معنا لتأكيد سعرها أولًا.');return}const found=cart.find(x=>x.id===item.id);if(found)found.qty++;else cart.push({...item,qty:1});renderCart();showToast('تمت إضافة الخدمة إلى السلة');}
+    function renderCart(){cartItemsEl.innerHTML='';if(!cart.length)cartItemsEl.innerHTML='<p class="empty-cart">السلة فارغة — أضف خدمة للبدء.</p>';cart.forEach(item=>{const row=document.createElement('div');row.className='cart-line';row.innerHTML=`<div><strong>${escapeHtml(item.name)}</strong><small>${money(item.price)} للوحدة</small><div class="cart-controls"><button type="button" data-action="minus" data-id="${escapeHtml(item.id)}">−</button><span>${item.qty}</span><button type="button" data-action="plus" data-id="${escapeHtml(item.id)}">+</button><button type="button" data-action="remove" data-id="${escapeHtml(item.id)}">حذف</button></div></div><div class="cart-line-price">${money(item.price*item.qty)}</div>`;cartItemsEl.appendChild(row)});cartCountEl.textContent=cart.reduce((n,x)=>n+x.qty,0);cartTotalEl.textContent=money(cart.reduce((n,x)=>n+x.price*x.qty,0));}
+    function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    document.querySelectorAll('[data-order]').forEach(button=>button.addEventListener('click',()=>{if(button.classList.contains('order-custom')){const message='السلام عليكم، أرغب بالاستفسار عن خدمة مخصصة من متجر 39F.';window.open('https://wa.me/'+STORE.whatsapp+'?text='+encodeURIComponent(message),'_blank','noopener');return}addToCart(button)}));
+    cartItemsEl.addEventListener('click',e=>{const b=e.target.closest('button[data-action]');if(!b)return;const item=cart.find(x=>x.id===b.dataset.id);if(!item)return;if(b.dataset.action==='plus')item.qty++;if(b.dataset.action==='minus')item.qty--;if(b.dataset.action==='remove'||item.qty<=0)cart=cart.filter(x=>x.id!==b.dataset.id);renderCart()});
+    document.getElementById('cartOpen').addEventListener('click',()=>{overlay.classList.add('open');overlay.setAttribute('aria-hidden','false')});
+    function closeCheckout(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true')};document.getElementById('checkoutClose').addEventListener('click',closeCheckout);overlay.addEventListener('click',e=>{if(e.target===overlay)closeCheckout()});
+    document.getElementById('paymentMethod').addEventListener('change',e=>{document.getElementById('paymentNote').textContent=e.target.value==='bank_transfer'?'سيُسجّل الطلب كـ«بانتظار التحويل». أضف بيانات الحساب البنكي في إعدادات الخادم قبل الإطلاق.':'*تظهر وسائل الدفع المتاحة حسب تفعيل حساب التاجر لدى بوابة الدفع.';document.getElementById('bankDetails').hidden=true});
+    document.getElementById('checkoutForm').addEventListener('submit',async e=>{e.preventDefault();if(!cart.length){showToast('أضف منتجًا للسلة أولًا');return}const form=e.currentTarget,btn=document.getElementById('checkoutSubmit'),msg=document.getElementById('formMessage');btn.disabled=true;msg.textContent='جارٍ إنشاء الطلب…';const fd=new FormData(form);const payload={customerName:fd.get('customerName'),customerPhone:fd.get('customerPhone'),customerEmail:fd.get('customerEmail'),paymentMethod:fd.get('paymentMethod'),items:cart.map(x=>({id:x.id,quantity:x.qty}))};try{const res=await fetch('/api/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await res.json();if(!res.ok)throw new Error(data.error||'تعذر إنشاء الطلب');if(payload.paymentMethod==='paylink'){if(!data.paymentUrl)throw new Error(data.message||'بوابة الدفع غير مفعلة بعد. تواصل مع المتجر أو اختر التحويل البنكي.');window.location.href=data.paymentUrl;return}msg.textContent='تم تسجيل الطلب رقم '+data.orderNumber+' — الحالة: بانتظار التحويل البنكي.';const bd=data.bankDetails||{};document.getElementById('bankDetails').innerHTML='<h3>تعليمات التحويل البنكي</h3><p>رقم الطلب: <strong>'+escapeHtml(data.orderNumber)+'</strong></p><p>البنك: <strong>'+escapeHtml(bd.bankName||'سيتم تأكيده من المتجر')+'</strong><br>اسم المستفيد: <strong>'+escapeHtml(bd.accountName||'39F')+'</strong><br>الآيبان: <strong>'+escapeHtml(bd.iban||'سيتم إرساله من المتجر بعد تأكيد بيانات الحساب')+'</strong></p><p>أرسل إثبات التحويل ورقم الطلب عبر واتساب بعد التحويل.</p><a class="btn ghost" href="https://wa.me/'+STORE.whatsapp+'?text='+encodeURIComponent('السلام عليكم، هذا إثبات تحويل للطلب '+data.orderNumber)+'" target="_blank" rel="noopener">إرسال إثبات التحويل عبر واتساب</a>';document.getElementById('bankDetails').hidden=false;document.getElementById('paymentNote').textContent='أرسل رقم الطلب إلى واتساب المتجر بعد التحويل.';cart=[];renderCart();form.reset();showToast('تم تسجيل طلبك بنجاح');}catch(err){msg.textContent=err.message;showToast(err.message)}finally{btn.disabled=false}});
+    document.getElementById('whatsappLink').href='https://wa.me/'+STORE.whatsapp;document.getElementById('twitterLink').href=STORE.twitter;document.getElementById('year').textContent=new Date().getFullYear();
+    const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    document.querySelectorAll('.platform,.service,.player-card').forEach(card=>{card.addEventListener('mousemove',e=>{if(innerWidth<900)return;const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(800px) rotateY(${x*3}deg) rotateX(${-y*3}deg) translateY(-4px)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
+  </script>
+</body>
+</html>
